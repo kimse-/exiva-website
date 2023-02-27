@@ -1,0 +1,70 @@
+Svargrond : 
+<form name="myform" id="myform">
+    <select id="svartable">
+        <option value="0">Select a direction</option>
+		<option value="vfnw">very far north-west</option>
+		<option value="vfw">very far west</option>
+		<option value="vfsw">very far south-west</option>
+		<option value="vfs">very far south</option>
+    </select>
+</form>
+Farmine : 
+<form name="myform2" id="myform2">
+    <select id="farminetable">
+        <option value="0">Select a direction</option>
+		<option value="vfnw">very far north-west</option>
+		<option value="vfw">very far west</option>
+		<option value="vfsw">very far south-west</option>
+		<option value="vfs">very far south</option>
+    </select>
+</form>
+Oramond : 
+<form name="myform3" id="myform3">
+    <select id="oramondtable">
+        <option value="0">Select a direction</option>
+		<option value="vfnw">very far north-west</option>
+		<option value="vfw">very far west</option>
+		<option value="vfsw">very far south-west</option>
+		<option value="vfs">very far south</option>
+    </select>
+</form>
+Thais : 
+<form name="myform4" id="myform4">
+    <select id="thaistable">
+        <option value="0">Select a direction</option>
+		<option value="vfnw">very far north-west</option>
+		<option value="vfw">very far west</option>
+		<option value="vfsw">very far south-west</option>
+		<option value="vfs">very far south</option>
+    </select>
+</form>
+Port Hope : 
+<form name="myform5" id="myform5">
+    <select id="phtable">
+        <option value="0">Select a direction</option>
+		<option value="vfnw">very far north-west</option>
+		<option value="vfw">very far west</option>
+		<option value="vfsw">very far south-west</option>
+		<option value="vfs">very far south</option>
+    </select>
+</form>
+
+<button onClick="window.location.reload();">Find Location</button>
+
+<div id = "string1"> </div>
+
+<script>
+    var svar = document.getElementById("svartable").value;
+    var farmine = document.getElementById("farminetable").value;
+    var oramond = document.getElementById("oramondtable").value;
+    var thais = document.getElementById("thaistable").value;
+    var ph = document.getElementById("phtable").value;
+    var result = svar + farmine + oramond + thais + ph;
+    document.getElementById("string1").innerHTML = result;
+
+    window.setInterval('refresh()', 15000); 
+    function refresh() {
+        window .location.reload();
+    }
+    //document.getElementById("myImg").src = "hackanm.gif";
+</script>

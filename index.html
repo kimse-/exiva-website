@@ -1,170 +1,196 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Exiva map</title>
-<meta content="width=device-width" name="viewport">
-<style>
-  figure {
-    position: relative;
-  }
-  figure img {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-</style>
-<label>
-  Svargrond:
-  <select id="svartable">
-    <option value="vfnw">very far north-west</option>
-    <option value="vfw">very far west</option>
-    <option value="vfsw">very far south-west</option>
-    <option value="vfs">very far south</option>
-    <option value="vfse">very far south-east</option>
-    <option value="vfe">very far east</option>
-    <option value="vfne">very far north-east</option>
-    <option value="vfn">very far north</option>
-    <option value="fn">far north</option>
-    <option value="fnw">far north-west</option>
-    <option value="fw">far west</option>
-    <option value="fsw">far south-west</option>
-    <option value="fs">far south</option>
-    <option value="fse">far south-east</option>
-    <option value="fe">far east</option>
-    <option value="fne">far north-east</option>
-    <option value="nw">north-west</option>
-    <option value="n">north</option>
-    <option value="w">west</option>
-    <option value="sw">south-west</option>
-    <option value="s">south</option>
-    <option value="se">south-east</option>
-    <option value="e" selected>east</option>
-    <option value="ne">north-east</option>
-  </select>
-</label>
-<label>
-  Farmine:
-  <select id="farminetable">
-    <option value="vfnw">very far north-west</option>
-    <option value="vfw" selected>very far west</option>
-    <option value="vfsw">very far south-west</option>
-    <option value="vfs">very far south</option>
-    <option value="vfse">very far south-east</option>
-    <option value="vfe">very far east</option>
-    <option value="vfne">very far north-east</option>
-    <option value="vfn">very far north</option>
-    <option value="fn">far north</option>
-    <option value="fnw">far north-west</option>
-    <option value="fw">far west</option>
-    <option value="fsw">far south-west</option>
-    <option value="fs">far south</option>
-    <option value="fse">far south-east</option>
-    <option value="fe">far east</option>
-    <option value="fne">far north-east</option>
-    <option value="nw">north-west</option>
-    <option value="n">north</option>
-    <option value="w">west</option>
-    <option value="sw">south-west</option>
-    <option value="s">south</option>
-    <option value="se">south-east</option>
-    <option value="e">east</option>
-    <option value="ne">north-east</option>
-  </select>
-</label>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exiva map</title>
+  <meta content="width=device-width" name="viewport">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-<label>
-  Oramond:
-  <select id="oramondtable">
-    <option value="vfnw" selected>very far north-west</option>
-    <option value="vfw">very far west</option>
-    <option value="vfsw">very far south-west</option>
-    <option value="vfs">very far south</option>
-    <option value="vfse">very far south-east</option>
-    <option value="vfe">very far east</option>
-    <option value="vfne">very far north-east</option>
-    <option value="vfn">very far north</option>
-    <option value="fn">far north</option>
-    <option value="fnw">far north-west</option>
-    <option value="fw">far west</option>
-    <option value="fsw">far south-west</option>
-    <option value="fs">far south</option>
-    <option value="fse">far south-east</option>
-    <option value="fe">far east</option>
-    <option value="fne">far north-east</option>
-    <option value="nw">north-west</option>
-    <option value="n">north</option>
-    <option value="w">west</option>
-    <option value="sw">south-west</option>
-    <option value="s">south</option>
-    <option value="se">south-east</option>
-    <option value="e">east</option>
-    <option value="ne">north-east</option>
-  </select>
-</label>
 
-<label>
-  Thais:
-  <select id="thaistable">
-    <option value="vfnw">very far north-west</option>
-    <option value="vfw">very far west</option>
-    <option value="vfsw">very far south-west</option>
-    <option value="vfs">very far south</option>
-    <option value="vfse">very far south-east</option>
-    <option value="vfe">very far east</option>
-    <option value="vfne">very far north-east</option>
-    <option value="vfn" selected>very far north</option>
-    <option value="fn">far north</option>
-    <option value="fnw">far north-west</option>
-    <option value="fw">far west</option>
-    <option value="fsw">far south-west</option>
-    <option value="fs">far south</option>
-    <option value="fse">far south-east</option>
-    <option value="fe">far east</option>
-    <option value="fne">far north-east</option>
-    <option value="nw">north-west</option>
-    <option value="n">north</option>
-    <option value="w">west</option>
-    <option value="sw">south-west</option>
-    <option value="s">south</option>
-    <option value="se">south-east</option>
-    <option value="e">east</option>
-    <option value="ne">north-east</option>
-  </select>
-</label>
+<div id="cities">
+  <div class="city">
+    <label>
+      <div id="citystring">Svargrond:</div>
+      <span class="custom-dropdown">
+        <select id="svartable">
+          <option value="vfnw">very far north-west</option>
+          <option value="vfw">very far west</option>
+          <option value="vfsw">very far south-west</option>
+          <option value="vfs">very far south</option>
+          <option value="vfse">very far south-east</option>
+          <option value="vfe">very far east</option>
+          <option value="vfne">very far north-east</option>
+          <option value="vfn">very far north</option>
+          <option value="fn">far north</option>
+          <option value="fnw">far north-west</option>
+          <option value="fw">far west</option>
+          <option value="fsw">far south-west</option>
+          <option value="fs">far south</option>
+          <option value="fse">far south-east</option>
+          <option value="fe">far east</option>
+          <option value="fne">far north-east</option>
+          <option value="nw">north-west</option>
+          <option value="n">north</option>
+          <option value="w">west</option>
+          <option value="sw">south-west</option>
+          <option value="s">south</option>
+          <option value="se">south-east</option>
+          <option value="e" selected>east</option>
+          <option value="ne">north-east</option>
+        </select>
+      </span>
+    </label>
+  </div>
 
-<label>
-  Port Hope:
-  <select id="phtable">
-    <option value="vfnw">very far north-west</option>
-    <option value="vfw">very far west</option>
-    <option value="vfsw">very far south-west</option>
-    <option value="vfs">very far south</option>
-    <option value="vfse">very far south-east</option>
-    <option value="vfe">very far east</option>
-    <option value="vfne">very far north-east</option>
-    <option value="vfn" selected>very far north</option>
-    <option value="fn">far north</option>
-    <option value="fnw">far north-west</option>
-    <option value="fw">far west</option>
-    <option value="fsw">far south-west</option>
-    <option value="fs">far south</option>
-    <option value="fse">far south-east</option>
-    <option value="fe">far east</option>
-    <option value="fne">far north-east</option>
-    <option value="nw">north-west</option>
-    <option value="n">north</option>
-    <option value="w">west</option>
-    <option value="sw">south-west</option>
-    <option value="s">south</option>
-    <option value="se">south-east</option>
-    <option value="e">east</option>
-    <option value="ne">north-east</option>
-  </select>
-</label>
+  <div class="city"> 
+    <label>
+      <div id="citystring">Farmine:</div>
+      <span class="custom-dropdown">
+        <select id="farminetable">
+          <option value="vfnw">very far north-west</option>
+          <option value="vfw" selected>very far west</option>
+          <option value="vfsw">very far south-west</option>
+          <option value="vfs">very far south</option>
+          <option value="vfse">very far south-east</option>
+          <option value="vfe">very far east</option>
+          <option value="vfne">very far north-east</option>
+          <option value="vfn">very far north</option>
+          <option value="fn">far north</option>
+          <option value="fnw">far north-west</option>
+          <option value="fw">far west</option>
+          <option value="fsw">far south-west</option>
+          <option value="fs">far south</option>
+          <option value="fse">far south-east</option>
+          <option value="fe">far east</option>
+          <option value="fne">far north-east</option>
+          <option value="nw">north-west</option>
+          <option value="n">north</option>
+          <option value="w">west</option>
+          <option value="sw">south-west</option>
+          <option value="s">south</option>
+          <option value="se">south-east</option>
+          <option value="e">east</option>
+          <option value="ne">north-east</option>
+        </select>
+      </span>
+    </label>
+  </div>
+
+  <div class="city"> 
+    <label>
+      <div id="citystring">Oramond:</div>
+      <span class="custom-dropdown">
+        <select id="oramondtable">
+          <option value="vfnw" selected>very far north-west</option>
+          <option value="vfw">very far west</option>
+          <option value="vfsw">very far south-west</option>
+          <option value="vfs">very far south</option>
+          <option value="vfse">very far south-east</option>
+          <option value="vfe">very far east</option>
+          <option value="vfne">very far north-east</option>
+          <option value="vfn">very far north</option>
+          <option value="fn">far north</option>
+          <option value="fnw">far north-west</option>
+          <option value="fw">far west</option>
+          <option value="fsw">far south-west</option>
+          <option value="fs">far south</option>
+          <option value="fse">far south-east</option>
+          <option value="fe">far east</option>
+          <option value="fne">far north-east</option>
+          <option value="nw">north-west</option>
+          <option value="n">north</option>
+          <option value="w">west</option>
+          <option value="sw">south-west</option>
+          <option value="s">south</option>
+          <option value="se">south-east</option>
+          <option value="e">east</option>
+          <option value="ne">north-east</option>
+        </select>
+      </span>
+    </label>
+  </div>
+
+  <div class="city"> 
+    <label>
+      <div id="citystring">Thais:</div>
+      <span class="custom-dropdown">
+        <select id="thaistable">
+          <option value="vfnw">very far north-west</option>
+          <option value="vfw">very far west</option>
+          <option value="vfsw">very far south-west</option>
+          <option value="vfs">very far south</option>
+          <option value="vfse">very far south-east</option>
+          <option value="vfe">very far east</option>
+          <option value="vfne">very far north-east</option>
+          <option value="vfn" selected>very far north</option>
+          <option value="fn">far north</option>
+          <option value="fnw">far north-west</option>
+          <option value="fw">far west</option>
+          <option value="fsw">far south-west</option>
+          <option value="fs">far south</option>
+          <option value="fse">far south-east</option>
+          <option value="fe">far east</option>
+          <option value="fne">far north-east</option>
+          <option value="nw">north-west</option>
+          <option value="n">north</option>
+          <option value="w">west</option>
+          <option value="sw">south-west</option>
+          <option value="s">south</option>
+          <option value="se">south-east</option>
+          <option value="e">east</option>
+          <option value="ne">north-east</option>
+        </select>
+      </span>
+    </label>
+  </div>
+
+  <div class="city"> 
+    <label>
+      <div id="citystring">Port Hope:</div>
+      <span class="custom-dropdown">
+        <select id="phtable">
+          <option value="vfnw">very far north-west</option>
+          <option value="vfw">very far west</option>
+          <option value="vfsw">very far south-west</option>
+          <option value="vfs">very far south</option>
+          <option value="vfse">very far south-east</option>
+          <option value="vfe">very far east</option>
+          <option value="vfne">very far north-east</option>
+          <option value="vfn" selected>very far north</option>
+          <option value="fn">far north</option>
+          <option value="fnw">far north-west</option>
+          <option value="fw">far west</option>
+          <option value="fsw">far south-west</option>
+          <option value="fs">far south</option>
+          <option value="fse">far south-east</option>
+          <option value="fe">far east</option>
+          <option value="fne">far north-east</option>
+          <option value="nw">north-west</option>
+          <option value="n">north</option>
+          <option value="w">west</option>
+          <option value="sw">south-west</option>
+          <option value="s">south</option>
+          <option value="se">south-east</option>
+          <option value="e">east</option>
+          <option value="ne">north-east</option>
+        </select>
+      </span>
+    </label>
+  </div>
+</div>
 
 <output></output>
-<figure>
-  <img src="images/default.jpg" width="2269" height="2250" alt="">
-  <img src="#" width="2269" height="2250" alt="" id="overlay">
-</figure>
+
+<div id="map">
+  <figure>
+    <img src="images/default.jpg" alt="">
+    <img src="#" alt="" id="overlay">
+  </figure>
+</div>
 
 <script src="main.js"></script>
+</body>
+
+</html>
